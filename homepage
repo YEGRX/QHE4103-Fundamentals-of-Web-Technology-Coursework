@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: yellow;
+            }
+            p.logo {
+                position: relative;
+                left: 1%;
+                top: 1%;
+            }
+            ul {
+                list-style-type: none;
+            }
+            li {
+                float: left;
+                border: 1px solid black;
+                padding: 2% 3%;
+                background-color: gray;
+            }
+            li a {
+                text-decoration: none;
+                padding: 1.5em 2em;
+            }
+            li a:hover {
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <p class="logo"><a href=" ">LOGO</p >
+        <ul>
+            <p>
+            <li><a href="home.html">HOME</a ></li>
+            <li><a href="sell.html">SELL</a ></li>
+            <li><a href="buy.html">BUY</a ></li>
+            <li><a href="aboutus.html">ABOUT US</a ></li>
+            </p >
+        </body>
+        <br><br/><br><br/><br><br/>
+        <fore>
+            <p style="text-align: center;">
+            <input type="text" placeholder="Car Model">
+            <input type="text" placeholder="Car Year"><br/>
+            <input type="submit" value="SEARCH">
+            <input type="reset">
+            </p >
+        </fore>
+        <p style="font-size: 14pt;">Welcome to our Car Dealership!</p >
+</html>

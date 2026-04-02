@@ -82,6 +82,12 @@
                 text-align: center;
                 font-size: 14pt;
             }
+
+            #message {
+                text-align: center;
+                color: red;
+                font-size: 14px;
+            }
         </style>
     </head>
 
@@ -99,16 +105,16 @@
 
         <div class="login-box">
             <!-- first draft of seller login page -->
-            <form>
+            <form onsubmit="return checkLogin()">
                 <table>
                     <tr>
                         <td>Email</td>
-                        <td><input type="text" placeholder="Enter your email"></td>
+                        <td><input type="text" id="email" placeholder="Enter your email"></td>
                     </tr>
 
                     <tr>
                         <td>Password</td>
-                        <td><input type="password" placeholder="Enter your password"></td>
+                        <td><input type="password" id="password" placeholder="Enter your password"></td>
                     </tr>
 
                     <tr>
@@ -119,8 +125,27 @@
                     </tr>
                 </table>
             </form>
+
+            <p id="message"></p>
         </div>
 
         <p class="note">This is the first draft of login page.</p>
+
+        <script>
+            function checkLogin() {
+                var emailValue = document.getElementById("email").value;
+                var passwordValue = document.getElementById("password").value;
+                var messageText = document.getElementById("message");
+
+                if (emailValue == "" || passwordValue == "") {
+                    messageText.innerHTML = "Email and password cannot be empty.";
+                    return false;
+                }
+
+                messageText.style.color = "green";
+                messageText.innerHTML = "Login form submitted successfully.";
+                return false;
+            }
+        </script>
     </body>
 </html>

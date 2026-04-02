@@ -1,51 +1,80 @@
 <!DOCTYPE html>
 <head>
     <title>Registration</title>
+
     <style>
         body {
             font-family: Times New Roman;
+            background-color: lightgray;
+            margin: 20px;
         }
 
-        input {
+        .title {
+            text-align: center;
+        }
+
+        .nav {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            margin-right: 10px;
+            color: blue;
+        }
+
+        .form-box {
+            background-color: white;
+            width: 320px;
+            padding: 15px;
+        }
+
+        .form-box input {
             width: 200px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Online Car Sale</h1>
-    <p>Registration Page</p>
 
-    <a href="index.html">Home</a>
-    <a href="registration.html">Register</a>
-    <a href="login.html">Login</a>
-    <a href="add-car.html">Add Car</a>
-    <a href="search.html">Search</a>
+    <h1 class="title">Online Car Sale</h1>
+    <p class="title">Seller Registration Page</p>
 
-    <br><br>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="registration.html">Register</a>
+        <a href="login.html">Login</a>
+        <a href="add-car.html">Add Car</a>
+        <a href="search.html">Search</a>
+    </div>
 
-    <form border="1">
-        Name<br>
-        <input type="text" name="name"><br><br>
+    <div class="form-box">
+        <form>
+            Name<br>
+            <input type="text" name="name"><br><br>
 
-        Address<br>
-        <input type="text" name="address"><br><br>
+            Address<br>
+            <input type="text" name="address"><br><br>
 
-        Phone Number<br>
-        <input type="text" name="phone"><br><br>
+            Phone Number<br>
+            <input type="text" name="phone"><br><br>
 
-        Email Address<br>
-        <input type="text" name="email"><br><br>
+            Email Address<br>
+            <input type="text" name="email"><br><br>
 
-        Username<br>
-        <input type="text" name="username"><br><br>
+            Username<br>
+            <input type="text" name="username"><br><br>
 
-        Password<br>
-        <input type="password" name="password"><br><br>
+            Password<br>
+            <input type="password" name="password"><br><br>
 
-        <input type="submit" value="Submit">
-        <input type="reset" value="Clear">
-    </form>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </form>
+    </div>
 
 </body>
 </html>
+
+

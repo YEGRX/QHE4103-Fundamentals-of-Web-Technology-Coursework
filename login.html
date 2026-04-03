@@ -104,17 +104,16 @@
         <h1>Seller Login</h1>
 
         <div class="login-box">
-            <!-- first draft of seller login page -->
-            <form onsubmit="return checkLogin()">
+            <form onsubmit="return checkForm()">
                 <table>
                     <tr>
-                        <td>Email</td>
-                        <td><input type="text" id="email" placeholder="Enter your email"></td>
+                        <td>Username</td>
+                        <td><input type="text" id="username" placeholder="Enter your username" onfocus="setYellow('username')" onblur="setWhite('username')"></td>
                     </tr>
 
                     <tr>
                         <td>Password</td>
-                        <td><input type="password" id="password" placeholder="Enter your password"></td>
+                        <td><input type="password" id="password" placeholder="Enter your password" onfocus="setYellow('password')" onblur="setWhite('password')"></td>
                     </tr>
 
                     <tr>
@@ -132,18 +131,41 @@
         <p class="note">This is the first draft of login page.</p>
 
         <script>
-            function checkLogin() {
-                var emailValue = document.getElementById("email").value;
+            function setYellow(x) {
+                document.getElementById(x).style.background = "yellow";
+            }
+
+            function setWhite(x) {
+                document.getElementById(x).style.background = "white";
+            }
+
+            function checkForm() {
+                var usernameValue = document.getElementById("username").value;
                 var passwordValue = document.getElementById("password").value;
                 var messageText = document.getElementById("message");
 
-                if (emailValue == "" || passwordValue == "") {
-                    messageText.innerHTML = "Email and password cannot be empty.";
+                if (usernameValue == "" || passwordValue == "") {
+                    messageText.innerHTML = "Username and password cannot be empty.";
+                    return false;
+                }
+
+                if (usernameValue.length < 6 || usernameValue.length > 12) {
+                    messageText.innerHTML = "Username must be between 6 and 12 characters.";
+                    return false;
+                }
+
+                if (passwordValue.length < 6) {
+                    messageText.innerHTML = "Password must be at least 6 characters.";
+                    return false;
+                }
+
+                if (passwordValue.indexOf("@") == -1) {
+                    messageText.innerHTML = "Password must contain @.";
                     return false;
                 }
 
                 messageText.style.color = "green";
-                messageText.innerHTML = "Login form submitted successfully.";
+                messageText.innerHTML = "Login form is valid.";
                 return false;
             }
         </script>

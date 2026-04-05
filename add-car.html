@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Car - Online Car Sale</title>
-    <style>
+    <style type="text/css">
         body {
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
@@ -47,11 +47,60 @@
         .main-box {
             margin: 40px 5%;
         }
+        .form-box {
+            background-color: white;
+            border: 1px solid #999;
+            padding: 20px;
+            width: 420px;
+            max-width: 100%;
+        }
+        .text1 {
+            width: 220px;
+        }
+        .btn1 {
+            width: 90px;
+        }
     </style>
+
+    <script type="text/javascript">
+        function checkCar()
+        {
+            x = document.getElementById("colour").value;
+            y = document.getElementById("model").value;
+            z = document.getElementById("year").value;
+            a = document.getElementById("location").value;
+            b = document.getElementById("price").value;
+            c = document.getElementById("carimage").value;
+
+            p1 = /^[0-9]{4}$/;
+            p2 = /^[0-9]+$/;
+
+            if (x == "" || y == "" || z == "" || a == "" || b == "" || c == "")
+            {
+                alert("Please fill in all car details");
+                return false;
+            }
+            else if (p1.test(z) == false)
+            {
+                alert("Year should be 4 digits");
+                return false;
+            }
+            else if (p2.test(b) == false)
+            {
+                alert("Price should be numeric only");
+                return false;
+            }
+            else
+            {
+                alert("Car details look good");
+                return true;
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <p class="logo"><a href=" ">CAR SALE</a ></p >
+    <p class="logo"><a href="index.html">CAR SALE</a></p>
 
     <ul>
         <li><a href="index.html">HOME</a ></li>
@@ -63,7 +112,33 @@
 
     <div class="main-box">
         <h1>Add Your Car For Sale</h1>
-        <p>Page is under construction. Form fields will be added soon.</p >
+        <p>Please enter your car details below.</p>
+
+        <div class="form-box">
+            <form onsubmit="return checkCar()">
+                Colour<br>
+                <input class="text1" type="text" name="colour" id="colour"><br><br>
+
+                Model<br>
+                <input class="text1" type="text" name="model" id="model"><br><br>
+
+                Year<br>
+                <input class="text1" type="text" name="year" id="year"><br><br>
+
+                Location<br>
+                <input class="text1" type="text" name="location" id="location"><br><br>
+
+                Price<br>
+                <input class="text1" type="text" name="price" id="price"><br><br>
+
+                Image of Car<br>
+                <input type="file" name="carimage" id="carimage"><br><br>
+
+                <input class="btn1" type="button" value="Check" onclick="checkCar()">
+                <input class="btn1" type="submit" value="Submit">
+                <input class="btn1" type="reset" value="Clear">
+            </form>
+        </div>
     </div>
 
 </body>

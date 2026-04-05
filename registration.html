@@ -3,11 +3,11 @@
 <head>
     <title>Registration</title>
 
-    <style>
+    <style type="text/css">
         body {
             font-family: Times New Roman;
             background-color: lightgray;
-            margin: 20px;
+            margin: 20%;
         }
 
         .title {
@@ -30,10 +30,6 @@
             width: 320px;
             padding: 15px;
         }
-
-        .form-box input {
-            width: 200px;
-        }
     </style>
 
     <script type="text/javascript">
@@ -41,10 +37,44 @@
         {
             x = document.getElementById("name").value;
             y = document.getElementById("username").value;
+            z = document.getElementById("address").value;
+            a = document.getElementById("phone").value;
+            b = document.getElementById("email").value;
+            c = document.getElementById("password").value;
 
-            if (x == "" || y == "")
+            p0 = /^[A-Za-z ]+$/;
+            p1 = /^[A-Za-z0-9 ]+$/;
+            p2 = /^1[0-9]{10}$/;
+            p3 = /^[^@]+@[^@]+\.(cn|com)$/;
+            p4 = /^[A-Za-z0-9]{6,}$/;
+
+            if (x == "" || y == "" || z == "" || a == "" || b == "" || c == "")
             {
-                alert("Please enter name and username");
+                alert("Please fill in all required details");
+            }
+            else if (p0.test(x) == false)
+            {
+                alert("Name should contain letters and space only");
+            }
+            else if (p1.test(z) == false)
+            {
+                alert("Address should contain letters, numbers and space only");
+            }
+            else if (p2.test(a) == false)
+            {
+                alert("Please enter a valid China phone number");
+            }
+            else if (p3.test(b) == false)
+            {
+                alert("Please enter a valid email address ending with .cn or .com");
+            }
+            else if (p4.test(y) == false)
+            {
+                alert("Username must be at least 6 alphanumeric characters");
+            }
+            else if (p4.test(c) == false)
+            {
+                alert("Password must be at least 6 alphanumeric characters");
             }
             else
             {
@@ -55,6 +85,7 @@
 </head>
 
 <body>
+
     <!-- Today I added a small JavaScript check. -->
 
     <h1 class="title">Online Car Sale</h1>
@@ -74,24 +105,25 @@
             <input type="text" name="name" id="name"><br><br>
 
             Address<br>
-            <input type="text" name="address"><br><br>
+            <input type="text" name="address" id="address"><br><br>
 
             Phone Number<br>
-            <input type="text" name="phone"><br><br>
+            <input type="text" name="phone" id="phone"><br><br>
 
             Email Address<br>
-            <input type="text" name="email"><br><br>
+            <input type="text" name="email" id="email"><br><br>
 
             Username<br>
             <input type="text" name="username" id="username"><br><br>
 
             Password<br>
-            <input type="password" name="password"><br><br>
+            <input type="password" name="password" id="password"><br><br>
 
             <input type="button" value="Check Form" onclick="check1()">
             <input type="submit" value="Submit">
             <input type="reset" value="Clear">
         </form>
     </div>
+
 </body>
 </html>

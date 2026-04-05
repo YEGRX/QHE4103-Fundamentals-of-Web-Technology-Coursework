@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Search Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                background-color: lightyellow;
+                font-family: Arial;
+            }
+
+            p.logo {
+                position: relative;
+                left: 1%;
+                top: 1%;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            p.logo a {
+                text-decoration: none;
+                color: black;
+            }
+
+            ul {
+                list-style-type: none;
+            }
+
+            li {
+                float: left;
+                border: 1px solid black;
+                padding: 2% 3%;
+                background-color: gray;
+                margin-right: 8px;
+            }
+
+            li a {
+                text-decoration: none;
+                color: white;
+                padding: 1.5em 2em;
+            }
+
+            li a:hover {
+                background-color: green;
+                color: white;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 120px;
+            }
+
+            .search-box {
+                width: 500px;
+                margin: 40px auto;
+                border: 1px solid black;
+                background-color: white;
+                padding: 20px;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                padding: 10px;
+            }
+
+            input[type="text"] {
+                width: 95%;
+                padding: 8px;
+            }
+
+            .button-row {
+                text-align: center;
+            }
+
+            .result-box {
+                width: 500px;
+                margin: 20px auto;
+                border: 1px solid black;
+                background-color: white;
+                padding: 20px;
+            }
+
+            .note {
+                text-align: center;
+                font-size: 14pt;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p class="logo"><a href="search.html">LOGO</a></p>
+
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="registration.html">REGISTER</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li><a href="search.html">SEARCH</a></li>
+        </ul>
+
+        <h1>Search Cars</h1>
+
+        <div class="search-box">
+            <form>
+                <table>
+                    <tr>
+                        <td>Car Model</td>
+                        <td><input type="text" placeholder="Enter car model"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Car Year</td>
+                        <td><input type="text" placeholder="Enter car year"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="button-row">
+                            <input type="submit" value="Search">
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="result-box">
+            <h3>Search Result</h3>
+            <p>No result yet.</p>
+        </div>
+
+        <p class="note">This is the first draft of search page.</p>
+    </body>
+</html>

@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online Car Sale - Homepage</title>
         <style>
             body {
                 background-color: yellow;
+                font-family: Arial, sans-serif;
             }
             p.logo {
                 position: relative;
@@ -27,28 +31,46 @@
                 background-color: green;
                 color: white;
             }
+            .search-box {
+                text-align: center;
+            }
+            .intro-box {
+                margin-top: 30px;
+                padding: 10px;
+            }
+            .link-box {
+                margin-top: 20px;
+                padding: 10px;
+            }
         </style>
     </head>
 
     <body>
-
-        <p class="logo"><a href=" ">LOGO</p >
+        <p class="logo"><a href="homepage.html">LOGO</a></p>
         <ul>
-            <p>
-            <li><a href="home.html">HOME</a ></li>
-            <li><a href="sell.html">SELL</a ></li>
-            <li><a href="buy.html">BUY</a ></li>
-            <li><a href="aboutus.html">ABOUT US</a ></li>
-            </p >
-        </body>
-        <br><br/><br><br/><br><br/>
-        <fore>
-            <p style="text-align: center;">
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="sell.html">SELL</a></li>
+            <li><a href="buy.html">BUY</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+        </ul>
+
+        <br><br><br><br><br><br>
+
+        <div class="search-box">
             <input type="text" placeholder="Car Model">
-            <input type="text" placeholder="Car Year"><br/>
+            <input type="text" placeholder="Car Year"><br><br>
             <input type="submit" value="SEARCH">
-            <input type="reset">
-            </p >
-        </fore>
-        <p style="font-size: 14pt;">Welcome to our Car Dealership!</p >
+            <input type="reset" value="RESET">
+        </div>
+
+        <div class="intro-box">
+            <p style="font-size: 14pt;">Welcome to our Car Dealership!</p>
+            <p>We provide a simple platform for users to search and explore cars online.</p>
+        </div>
+
+        <div class="link-box">
+            <p><a href="sell.html">Seller page will be added later.</a></p>
+            <p><a href="buy.html">Buyer page will be added later.</a></p>
+        </div>
+    </body>
 </html>

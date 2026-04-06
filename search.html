@@ -105,16 +105,16 @@
         <h1>Search Cars</h1>
 
         <div class="search-box">
-            <form>
+            <form onsubmit="return showResult()" onreset="clearResult()">
                 <table>
                     <tr>
                         <td>Car Model</td>
-                        <td><input type="text" placeholder="Enter car model"></td>
+                        <td><input type="text" id="model" placeholder="Enter car model"></td>
                     </tr>
 
                     <tr>
                         <td>Car Year</td>
-                        <td><input type="text" placeholder="Enter car year"></td>
+                        <td><input type="text" id="year" placeholder="Enter car year"></td>
                     </tr>
 
                     <tr>
@@ -129,9 +129,29 @@
 
         <div class="result-box">
             <h3>Search Result</h3>
-            <p>No result yet.</p>
+            <p id="result">No result yet.</p>
         </div>
 
         <p class="note">This is the first draft of search page.</p>
+
+        <script>
+            function showResult() {
+                var modelValue = document.getElementById("model").value;
+                var yearValue = document.getElementById("year").value;
+                var resultText = document.getElementById("result");
+
+                if (modelValue == "" && yearValue == "") {
+                    resultText.innerHTML = "Please enter car model or car year.";
+                    return false;
+                }
+
+                resultText.innerHTML = "Toyota Camry, 2020, 120000 RMB";
+                return false;
+            }
+
+            function clearResult() {
+                document.getElementById("result").innerHTML = "No result yet.";
+            }
+        </script>
     </body>
 </html>

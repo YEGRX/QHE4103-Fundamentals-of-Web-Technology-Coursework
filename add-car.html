@@ -44,9 +44,11 @@
         .current-page {
             background-color: #333;
         }
+
         .main-box {
             margin: 40px 5%;
         }
+
         .form-box {
             background-color: white;
             border: 1px solid #999;
@@ -54,15 +56,43 @@
             width: 420px;
             max-width: 100%;
         }
+
         .text1 {
             width: 220px;
         }
+
         .btn1 {
             width: 90px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            li {
+                float: none;
+                display: block;
+                width: 100%;
+            }
+
+            .form-box {
+                width: 100%;
+            }
+
+            .text1 {
+                width: 100%;
+            }
         }
     </style>
 
     <script type="text/javascript">
+        function setYellow(x)
+        {
+            document.getElementById(x).style.background = "yellow";
+        }
+
+        function setWhite(x)
+        {
+            document.getElementById(x).style.background = "white";
+        }
+
         function checkCar()
         {
             x = document.getElementById("colour").value;
@@ -100,6 +130,7 @@
 </head>
 
 <body>
+
     <p class="logo"><a href="index.html">CAR SALE</a></p>
 
     <ul>
@@ -117,19 +148,19 @@
         <div class="form-box">
             <form onsubmit="return checkCar()">
                 Colour<br>
-                <input class="text1" type="text" name="colour" id="colour"><br><br>
+                <input class="text1" type="text" name="colour" id="colour" onfocus="setYellow('colour')" onblur="setWhite('colour')"><br><br>
 
                 Model<br>
-                <input class="text1" type="text" name="model" id="model"><br><br>
+                <input class="text1" type="text" name="model" id="model" onfocus="setYellow('model')" onblur="setWhite('model')"><br><br>
 
                 Year<br>
-                <input class="text1" type="text" name="year" id="year"><br><br>
+                <input class="text1" type="text" name="year" id="year" onfocus="setYellow('year')" onblur="setWhite('year')"><br><br>
 
                 Location<br>
-                <input class="text1" type="text" name="location" id="location"><br><br>
+                <input class="text1" type="text" name="location" id="location" onfocus="setYellow('location')" onblur="setWhite('location')"><br><br>
 
                 Price<br>
-                <input class="text1" type="text" name="price" id="price"><br><br>
+                <input class="text1" type="text" name="price" id="price" onfocus="setYellow('price')" onblur="setWhite('price')"><br><br>
 
                 Image of Car<br>
                 <input type="file" name="carimage" id="carimage"><br><br>
@@ -140,6 +171,5 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>

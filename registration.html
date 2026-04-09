@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        body {
+            font-family: Times New Roman;
+            background-color: lightgray;
+            margin: 10%;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .nav {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .nav a {
+            margin-right: 10px;
+            color: blue;
+        }
+
+        .form-box {
+            background-color: white;
+            width: 320px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 220px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            body {
+                margin: 5%;
+            }
+
+            .nav a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            .form-box {
+                width: 100%;
+            }
+
+            input[type="text"], input[type="password"] {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function setYellow(x)
+        {
+            document.getElementById(x).style.background = "yellow";
+        }
+
+        function setWhite(x)
+        {
+            document.getElementById(x).style.background = "white";
+        }
+
+        function check1()
+        {
+            x = document.getElementById("name").value;
+            y = document.getElementById("username").value;
+            z = document.getElementById("address").value;
+            a = document.getElementById("phone").value;
+            b = document.getElementById("email").value;
+            c = document.getElementById("password").value;
+
+            p0 = /^[A-Za-z ]+$/;
+            p1 = /^[A-Za-z0-9 ]+$/;
+            p2 = /^1[0-9]{10}$/;
+            p3 = /^[^@]+@[^@]+\.(cn|com)$/;
+            p4 = /^[A-Za-z0-9]{6,}$/;
+
+            if (x == "" || y == "" || z == "" || a == "" || b == "" || c == "")
+            {
+                alert("Please fill in all required details");
+                return false;
+            }
+            else if (p0.test(x) == false)
+            {
+                alert("Name should contain letters and space only");
+                return false;
+            }
+            else if (p1.test(z) == false)
+            {
+                alert("Address should contain letters, numbers and space only");
+                return false;
+            }
+            else if (p2.test(a) == false)
+            {
+                alert("Please enter a valid China phone number");
+                return false;
+            }
+            else if (p3.test(b) == false)
+            {
+                alert("Please enter a valid email address ending with .cn or .com");
+                return false;
+            }
+            else if (p4.test(y) == false)
+            {
+                alert("Username must be at least 6 alphanumeric characters");
+                return false;
+            }
+            else if (p4.test(c) == false)
+            {
+                alert("Password must be at least 6 alphanumeric characters");
+                return false;
+            }
+            else
+            {
+                alert("Form looks good");
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+
+
+    <h1 class="title">Online Car Sale</h1>
+    <p class="title">Seller Registration Page</p>
+
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="registration.html">Register</a>
+        <a href="login.html">Login</a>
+        <a href="add-car.html">Add Car</a>
+        <a href="search.html">Search</a>
+    </div>
+
+    <div class="form-box">
+        <form onsubmit="return check1()">
+            Name<br>
+            <input type="text" name="name" id="name" onfocus="setYellow('name')" onblur="setWhite('name')"><br><br>
+
+            Address<br>
+            <input type="text" name="address" id="address" onfocus="setYellow('address')" onblur="setWhite('address')"><br><br>
+
+            Phone Number<br>
+            <input type="text" name="phone" id="phone" onfocus="setYellow('phone')" onblur="setWhite('phone')"><br><br>
+
+            Email Address<br>
+            <input type="text" name="email" id="email" onfocus="setYellow('email')" onblur="setWhite('email')"><br><br>
+
+            Username<br>
+            <input type="text" name="username" id="username" onfocus="setYellow('username')" onblur="setWhite('username')"><br><br>
+
+            Password<br>
+            <input type="password" name="password" id="password" onfocus="setYellow('password')" onblur="setWhite('password')"><br><br>
+
+            <input type="button" value="Check Form" onclick="check1()">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </form>
+    </div>
+
+</body>
+</html>

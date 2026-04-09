@@ -102,6 +102,21 @@
                 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
             }
 
+            .car-item {
+                border-bottom: 1px solid #e2e2dc;
+                padding: 14px 0;
+            }
+
+            .car-item:last-child {
+                border-bottom: none;
+            }
+
+            .detail-link {
+                text-decoration: none;
+                color: #2f3b45;
+                font-weight: bold;
+            }
+
             .note {
                 text-align: center;
                 font-size: 12pt;
@@ -153,17 +168,48 @@
         <p class="note">This is the first draft of search page.</p>
 
         <script>
+            function makeCarResult(model, year, price) {
+                var text = "";
+                text += "<div class='car-item'>";
+                text += "<p><b>Model:</b> " + model + "</p>";
+                text += "<p><b>Year:</b> " + year + "</p>";
+                text += "<p><b>Price:</b> " + price + "</p>";
+                text += "<p><a class='detail-link' href='car-detail.html'>View Detail</a></p>";
+                text += "</div>";
+                return text;
+            }
+
             function showResult() {
-                var modelValue = document.getElementById("model").value;
+                var modelValue = document.getElementById("model").value.toLowerCase();
                 var yearValue = document.getElementById("year").value;
                 var resultText = document.getElementById("result");
+                var output = "";
 
                 if (modelValue == "" && yearValue == "") {
                     resultText.innerHTML = "Please enter car model or car year.";
                     return false;
                 }
 
-                resultText.innerHTML = "Toyota Camry, 2020, 120000 RMB";
+                if ((modelValue == "camry" || modelValue == "toyota camry") && yearValue == "2020") {
+                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB");
+                }
+                else if ((modelValue == "civic" || modelValue == "honda civic") && yearValue == "2019") {
+                    output = makeCarResult("Honda Civic", "2019", "95000 RMB");
+                }
+                else if (modelValue == "bmw" || yearValue == "2021") {
+                    output = makeCarResult("BMW X3", "2021", "280000 RMB");
+                }
+                else if (modelValue == "camry" && yearValue == "") {
+                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB");
+                }
+                else if (modelValue == "" && yearValue == "2019") {
+                    output = makeCarResult("Honda Civic", "2019", "95000 RMB");
+                }
+                else {
+                    output = "No car found.";
+                }
+
+                resultText.innerHTML = output;
                 return false;
             }
 

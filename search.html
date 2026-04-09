@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Search Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                background-color: #f4f4f1;
+                font-family: Arial, sans-serif;
+                color: #222222;
+                margin: 0;
+            }
+
+            p.logo {
+                margin: 30px 0 10px 60px;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            p.logo a {
+                text-decoration: none;
+                color: #222222;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0 0 20px 40px;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            li {
+                float: left;
+                border: 1px solid #cfcfc8;
+                background-color: #ffffff;
+                margin-right: 14px;
+                min-width: 165px;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #444444;
+                padding: 18px 24px;
+                display: block;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            li a:hover {
+                background-color: #a9a9a9;
+                color: #ffffff;
+            }
+
+            .active-link {
+                background-color: #a9a9a9;
+                color: #ffffff;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 130px;
+                font-size: 34px;
+                font-weight: normal;
+            }
+
+            .search-box {
+                width: 540px;
+                margin: 40px auto;
+                border: 1px solid #d6d6d0;
+                background-color: #ffffff;
+                padding: 28px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                padding: 10px;
+            }
+
+            input[type="text"] {
+                width: 95%;
+                padding: 10px;
+                border: 1px solid #c8c8c2;
+                background-color: #fafaf8;
+            }
+
+            .button-row {
+                text-align: center;
+            }
+
+            input[type="submit"],
+            input[type="reset"] {
+                padding: 10px 18px;
+                margin: 0 6px;
+                border: 1px solid #2f3b45;
+                background-color: #2f3b45;
+                color: white;
+            }
+
+            .result-box {
+                width: 540px;
+                margin: 20px auto;
+                border: 1px solid #d6d6d0;
+                background-color: #ffffff;
+                padding: 28px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            }
+
+            .car-item {
+                border-bottom: 1px solid #e2e2dc;
+                padding: 14px 0;
+            }
+
+            .car-item:last-child {
+                border-bottom: none;
+            }
+
+            .detail-link {
+                text-decoration: none;
+                color: #2f3b45;
+                font-weight: bold;
+            }
+
+            .note {
+                text-align: center;
+                font-size: 12pt;
+                color: #666666;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p class="logo"><a href="search.html">LOGO</a></p>
+
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="registration.html">REGISTER</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li><a class="active-link" href="search.html">SEARCH</a></li>
+        </ul>
+
+        <h1>Search Cars</h1>
+
+        <div class="search-box">
+            <form onsubmit="return showResult()" onreset="clearResult()">
+                <table>
+                    <tr>
+                        <td>Car Model</td>
+                        <td><input type="text" id="model" placeholder="Enter car model"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Car Year</td>
+                        <td><input type="text" id="year" placeholder="Enter car year"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="button-row">
+                            <input type="submit" value="Search">
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="result-box">
+            <h3>Search Result</h3>
+            <p id="result">No result yet.</p>
+        </div>
+
+        <p class="note">This is the first draft of search page.</p>
+
+        <script>
+            function makeCarResult(model, year, price) {
+                var text = "";
+                text += "<div class='car-item'>";
+                text += "<p><b>Model:</b> " + model + "</p>";
+                text += "<p><b>Year:</b> " + year + "</p>";
+                text += "<p><b>Price:</b> " + price + "</p>";
+                text += "<p><a class='detail-link' href='car-detail.html'>View Detail</a></p>";
+                text += "</div>";
+                return text;
+            }
+
+            function showResult() {
+                var modelValue = document.getElementById("model").value.toLowerCase();
+                var yearValue = document.getElementById("year").value;
+                var resultText = document.getElementById("result");
+                var output = "";
+
+                if (modelValue == "" && yearValue == "") {
+                    resultText.innerHTML = "Please enter car model or car year.";
+                    return false;
+                }
+
+                if ((modelValue == "camry" || modelValue == "toyota camry") && yearValue == "2020") {
+                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB");
+                }
+                else if ((modelValue == "civic" || modelValue == "honda civic") && yearValue == "2019") {
+                    output = makeCarResult("Honda Civic", "2019", "95000 RMB");
+                }
+                else if (modelValue == "bmw" || yearValue == "2021") {
+                    output = makeCarResult("BMW X3", "2021", "280000 RMB");
+                }
+                else if (modelValue == "camry" && yearValue == "") {
+                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB");
+                }
+                else if (modelValue == "" && yearValue == "2019") {
+                    output = makeCarResult("Honda Civic", "2019", "95000 RMB");
+                }
+                else {
+                    output = "No car found.";
+                }
+
+                resultText.innerHTML = output;
+                return false;
+            }
+
+            function clearResult() {
+                document.getElementById("result").innerHTML = "No result yet.";
+            }
+        </script>
+    </body>
+</html>

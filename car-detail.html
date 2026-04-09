@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Car Detail Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                background-color: #f4f4f1;
+                font-family: Arial, sans-serif;
+                color: #222222;
+                margin: 0;
+            }
+
+            p.logo {
+                margin: 30px 0 10px 60px;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            p.logo a {
+                text-decoration: none;
+                color: #222222;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0 0 20px 40px;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            li {
+                float: left;
+                border: 1px solid #cfcfc8;
+                background-color: #ffffff;
+                margin-right: 14px;
+                min-width: 165px;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #444444;
+                padding: 18px 24px;
+                display: block;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            li a:hover {
+                background-color: #a9a9a9;
+                color: #ffffff;
+            }
+
+            .active-link {
+                background-color: #a9a9a9;
+                color: #ffffff;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 130px;
+                font-size: 34px;
+                font-weight: normal;
+            }
+
+            .detail-box {
+                width: 540px;
+                margin: 40px auto;
+                border: 1px solid #d6d6d0;
+                background-color: #ffffff;
+                padding: 28px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            }
+
+            .back-link {
+                text-decoration: none;
+                color: #2f3b45;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p class="logo"><a href="car-detail.html">LOGO</a></p>
+
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="registration.html">REGISTER</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li><a class="active-link" href="search.html">SEARCH</a></li>
+        </ul>
+
+        <h1>Car Detail</h1>
+
+        <div class="detail-box">
+            <p><b>Model:</b> Toyota Camry</p>
+            <p><b>Year:</b> 2020</p>
+            <p><b>Price:</b> 120000 RMB</p>
+            <p><b>Color:</b> Black</p>
+            <p><b>Mileage:</b> 50000 km</p>
+            <p><b>Description:</b> A clean used car for family daily use.</p>
+            <p><a class="back-link" href="search.html">Back to Search</a></p>
+        </div>
+    </body>
+</html>

@@ -9,34 +9,55 @@
                 background-color: #d9d9d9;
                 font-family: Arial, sans-serif;
                 color: #222222;
+                margin: 0;
             }
             p.logo {
-                position: relative;
-                left: 1%;
-                top: 1%;
+                margin: 0;
+                font-size: 24px;
+                font-weight: bold;
+                padding: 20px 20px 10px 20px;
+            }
+            p.logo a {
+                text-decoration: none;
+                color: #222222;
             }
             ul {
                 list-style-type: none;
+                margin: 0;
+                padding: 0 20px 20px 20px;
+                overflow: hidden;
             }
             li {
                 float: left;
                 border: 1px solid #666666;
-                padding: 2% 3%;
                 background-color: #bfbfbf;
+                margin-right: 10px;
             }
             li a {
+                display: block;
                 text-decoration: none;
                 color: #222222;
-                padding: 1.5em 2em;
+                padding: 14px 20px;
             }
             li a:hover {
                 background-color: #8c8c8c;
                 color: white;
             }
+            .hero-box {
+                margin: 20px;
+                padding: 25px;
+                background-color: #efefef;
+                border: 1px solid #999999;
+            }
+            .hero-box h1 {
+                margin-top: 0;
+            }
             .search-box {
+                margin: 20px;
                 text-align: center;
                 background-color: #efefef;
                 padding: 15px;
+                border: 1px solid #999999;
             }
             .search-box input {
                 padding: 6px;
@@ -44,20 +65,57 @@
                 border: 1px solid #888888;
             }
             .intro-box {
-                margin-top: 30px;
-                padding: 10px;
+                margin: 20px;
+                padding: 15px;
                 background-color: #efefef;
+                border: 1px solid #999999;
+            }
+            .section-title {
+                margin-top: 0;
             }
             .link-box {
-                margin-top: 20px;
-                padding: 10px;
+                margin: 20px;
+                padding: 15px;
                 background-color: #efefef;
+                border: 1px solid #999999;
+                overflow: hidden;
+            }
+            .link-card {
+                float: left;
+                width: 22%;
+                margin-right: 2%;
+                padding: 12px;
+                border: 1px solid #888888;
+                background-color: #d6d6d6;
+            }
+            .link-card h3 {
+                margin-top: 0;
+                font-size: 16px;
+            }
+            .link-card a {
+                color: #222222;
+                text-decoration: none;
             }
             .footer {
-                margin-top: 30px;
+                margin: 20px;
+                padding: 15px;
+                background-color: #efefef;
+                border: 1px solid #999999;
                 text-align: center;
                 font-size: 12pt;
                 color: #444444;
+            }
+            @media screen and (max-width: 768px) {
+                li {
+                    float: none;
+                    margin-bottom: 10px;
+                }
+                .link-card {
+                    float: none;
+                    width: auto;
+                    margin-right: 0;
+                    margin-bottom: 12px;
+                }
             }
         </style>
     </head>
@@ -66,14 +124,19 @@
         <p class="logo"><a href="homepage.html">LOGO</a></p>
         <ul>
             <li><a href="homepage.html">HOME</a></li>
-            <li><a href="sell.html">SELL</a></li>
-            <li><a href="buy.html">BUY</a></li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="registration.html">REGISTRATION</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li><a href="add-car.html">ADD CAR</a></li>
+            <li><a href="search.html">SEARCH</a></li>
         </ul>
 
-        <br><br><br><br><br><br>
+        <div class="hero-box">
+            <h1>Welcome to Online Car Sale</h1>
+            <p>This website is developed for users to browse car information, register as seller and search for available cars online.</p>
+        </div>
 
         <div class="search-box">
+            <h2 class="section-title">Quick Search</h2>
             <input type="text" placeholder="Car Model">
             <input type="text" placeholder="Car Year"><br><br>
             <input type="submit" value="SEARCH">
@@ -81,17 +144,33 @@
         </div>
 
         <div class="intro-box">
-            <p style="font-size: 14pt;">Welcome to our Car Dealership!</p>
-            <p>We provide a simple platform for users to search and explore cars online.</p>
+            <h2 class="section-title">Business Introduction</h2>
+            <p>Our platform is designed to connect car buyers and sellers in one place. Users can search cars by model and year, view more details and access different pages through the navigation bar.</p>
         </div>
 
         <div class="link-box">
-            <p><a href="sell.html">Seller page will be added later.</a></p>
-            <p><a href="buy.html">Buyer page will be added later.</a></p>
+            <h2 class="section-title">Quick Links</h2>
+            <div class="link-card">
+                <h3>Seller Registration</h3>
+                <p><a href="registration.html">Go to registration page</a></p>
+            </div>
+            <div class="link-card">
+                <h3>Seller Login</h3>
+                <p><a href="login.html">Go to login page</a></p>
+            </div>
+            <div class="link-card">
+                <h3>Add Car</h3>
+                <p><a href="add-car.html">Go to add car page</a></p>
+            </div>
+            <div class="link-card">
+                <h3>Search Cars</h3>
+                <p><a href="search.html">Go to search page</a></p>
+            </div>
         </div>
 
         <div class="footer">
             <p>Online Car Sale Website</p>
+            <p>QHE4103 Fundamentals of Web Technology</p>
         </div>
     </body>
 </html>

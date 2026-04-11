@@ -7,24 +7,31 @@
     <style type="text/css">
         body {
             font-family: Times New Roman;
-            background-color: lightgray;
+            background-color: #e9e6df;
             margin: 10%;
         }
 
         .title {
             text-align: center;
+            color: #222222;
         }
 
         .nav {
-            background-color: white;
+            background-color: #1f1f1f;
             padding: 10px;
             margin-bottom: 20px;
             text-align: center;
+            border: 1px solid #555555;
         }
 
         .nav a {
             margin-right: 10px;
-            color: blue;
+            color: #d8c7a0;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: white;
         }
 
         .form-box {
@@ -32,10 +39,20 @@
             width: 320px;
             padding: 15px;
             margin: auto;
+            border: 1px solid #999999;
         }
 
         input[type="text"], input[type="password"] {
             width: 220px;
+            border: 1px solid #999999;
+            padding: 4px;
+        }
+
+        input[type="button"], input[type="submit"], input[type="reset"] {
+            background-color: #1f1f1f;
+            color: white;
+            border: 1px solid #555555;
+            padding: 5px 8px;
         }
 
         @media only screen and (max-width: 768px) {
@@ -61,7 +78,7 @@
     <script type="text/javascript">
         function setYellow(x)
         {
-            document.getElementById(x).style.background = "yellow";
+            document.getElementById(x).style.background = "#f3ead0";
         }
 
         function setWhite(x)
@@ -129,7 +146,6 @@
 </head>
 
 <body>
-
 
 
     <h1 class="title">Online Car Sale</h1>

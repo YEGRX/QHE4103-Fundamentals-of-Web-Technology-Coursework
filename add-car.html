@@ -4,54 +4,70 @@
     <title>Add Car - Online Car Sale</title>
     <style type="text/css">
         body {
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
+            background-color: #f4f4f1;
+            font-family: Times New Roman;
+            color: #222222;
             margin: 0;
             padding: 10px;
         }
+
         p.logo {
             position: relative;
             left: 1%;
             font-size: 20px;
             font-weight: bold;
         }
+
         p.logo a {
             text-decoration: none;
-            color: #000;
+            color: #222222;
         }
+
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
+
         li {
             float: left;
-            border: 1px solid #000;
+            border: 1px solid #cfcfc8;
             padding: 12px 25px;
-            background-color: #666;
+            background-color: #ffffff;
             margin-right: 5px;
             margin-bottom: 5px;
         }
+
         li a {
             text-decoration: none;
-            color: #fff;
+            color: #444444;
         }
+
         li a:hover {
-            background-color: #4CAF50;
-            color: #fff;
+            background-color: #a9a9a9;
+            color: #ffffff;
         }
+
         .current-page {
-            background-color: #333;
+            background-color: #a9a9a9;
+        }
+
+        .current-page a {
+            color: #ffffff;
         }
 
         .main-box {
             margin: 40px 5%;
         }
 
+        .main-box h1 {
+            color: #222222;
+        }
+
         .form-box {
-            background-color: white;
-            border: 1px solid #999;
+            background-color: #ffffff;
+            border: 1px solid #d6d6d0;
             padding: 20px;
             width: 420px;
             max-width: 100%;
@@ -59,10 +75,17 @@
 
         .text1 {
             width: 220px;
+            border: 1px solid #c8c8c2;
+            background-color: #fafaf8;
+            padding: 4px;
         }
 
         .btn1 {
             width: 90px;
+            background-color: #2f3b45;
+            color: white;
+            border: 1px solid #2f3b45;
+            padding: 5px 8px;
         }
 
         @media only screen and (max-width: 768px) {
@@ -85,7 +108,7 @@
     <script type="text/javascript">
         function setYellow(x)
         {
-            document.getElementById(x).style.background = "yellow";
+            document.getElementById(x).style.background = "#f3ead0";
         }
 
         function setWhite(x)
@@ -131,6 +154,8 @@
 
 <body>
 
+
+
     <p class="logo"><a href="index.html">CAR SALE</a></p>
 
     <ul>
@@ -171,5 +196,6 @@
             </form>
         </div>
     </div>
+
 </body>
 </html>

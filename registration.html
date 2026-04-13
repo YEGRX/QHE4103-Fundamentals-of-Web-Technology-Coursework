@@ -7,35 +7,56 @@
     <style type="text/css">
         body {
             font-family: Times New Roman;
-            background-color: lightgray;
+            background-color:#f4f4f1;
+            color: #222222;
             margin: 10%;
         }
 
         .title {
             text-align: center;
+            color: #222222;
         }
 
         .nav {
-            background-color: white;
+            background-color: #ffffff;
             padding: 10px;
             margin-bottom: 20px;
             text-align: center;
+            border: 1px solid #d6d6d0;
         }
 
         .nav a {
             margin-right: 10px;
-            color: blue;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color:#ffffff;
+            background-color: #a9a9a9;
+            padding: 4px 6px;
         }
 
         .form-box {
-            background-color: white;
+            background-color: #ffffff;
             width: 320px;
             padding: 15px;
             margin: auto;
+            border: 1px solid #d6d6d0;
         }
 
         input[type="text"], input[type="password"] {
             width: 220px;
+            border: 1px solid #c8c8c2;
+            background-color: #fafaf8;
+            padding: 4px;
+        }
+
+        input[type="button"], input[type="submit"], input[type="reset"] {
+            background-color: #2f3b45;
+            color: white;
+            border: 1px solid #2f3b45;
+            padding: 5px 8px;
         }
 
         @media only screen and (max-width: 768px) {
@@ -61,7 +82,7 @@
     <script type="text/javascript">
         function setYellow(x)
         {
-            document.getElementById(x).style.background = "yellow";
+            document.getElementById(x).style.background = "#efeee8";
         }
 
         function setWhite(x)
@@ -129,7 +150,6 @@
 </head>
 
 <body>
-
 
 
     <h1 class="title">Online Car Sale</h1>

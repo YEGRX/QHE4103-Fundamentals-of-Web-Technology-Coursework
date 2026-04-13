@@ -132,6 +132,44 @@
                 font-size: 12pt;
                 color: #666666;
             }
+
+            @media screen and (max-width: 768px) {
+                p.logo {
+                    margin: 20px 0 10px 20px;
+                }
+
+                ul {
+                    margin: 0 20px 20px 20px;
+                }
+
+                li {
+                    float: none;
+                    min-width: auto;
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+
+                h1 {
+                    margin-top: 40px;
+                    font-size: 28px;
+                }
+
+                .search-box,
+                .result-box {
+                    width: 88%;
+                    padding: 20px;
+                }
+
+                td {
+                    display: block;
+                    width: 100%;
+                    padding: 6px 0;
+                }
+
+                input[type="text"] {
+                    width: 100%;
+                }
+            }
         </style>
     </head>
 
@@ -139,7 +177,7 @@
         <p class="logo"><a href="search.html">LOGO</a></p>
 
         <ul>
-            <li><a href="home.html">HOME</a></li>
+            <li><a href="homepage.html">HOME</a></li>
             <li><a href="registration.html">REGISTER</a></li>
             <li><a href="login.html">LOGIN</a></li>
             <li><a class="active-link" href="search.html">SEARCH</a></li>
@@ -178,12 +216,14 @@
         <p class="note">This is the first draft of search page.</p>
 
         <script>
-            function makeCarResult(model, year, price) {
+            function makeCarResult(model, year, price, color, mileage) {
                 var text = "";
                 text += "<div class='car-item'>";
                 text += "<p><b>Model:</b> " + model + "</p>";
                 text += "<p><b>Year:</b> " + year + "</p>";
                 text += "<p><b>Price:</b> " + price + "</p>";
+                text += "<p><b>Color:</b> " + color + "</p>";
+                text += "<p><b>Mileage:</b> " + mileage + "</p>";
                 text += "<p><a class='detail-link' href='car-detail.html'>View Detail</a></p>";
                 text += "</div>";
                 return text;
@@ -201,19 +241,30 @@
                 }
 
                 if ((modelValue == "camry" || modelValue == "toyota camry") && yearValue == "2020") {
-                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB");
+                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
                 }
                 else if ((modelValue == "civic" || modelValue == "honda civic") && yearValue == "2019") {
-                    output = makeCarResult("Honda Civic", "2019", "95000 RMB");
+                    output = makeCarResult("Honda Civic", "2019", "95000 RMB", "White", "62000 km");
                 }
                 else if (modelValue == "bmw" || yearValue == "2021") {
-                    output = makeCarResult("BMW X3", "2021", "280000 RMB");
+                    output = makeCarResult("BMW X3", "2021", "280000 RMB", "Grey", "30000 km");
                 }
                 else if (modelValue == "camry" && yearValue == "") {
-                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB");
+                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
                 }
                 else if (modelValue == "" && yearValue == "2019") {
-                    output = makeCarResult("Honda Civic", "2019", "95000 RMB");
+                    output = makeCarResult("Honda Civic", "2019", "95000 RMB", "White", "62000 km");
+                }
+                else if (modelValue == "" && yearValue == "2020") {
+                    output += makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
+                    output += makeCarResult("Audi A4", "2020", "210000 RMB", "Blue", "41000 km");
+                }
+                else if (modelValue == "toyota" && yearValue == "") {
+                    output += makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
+                    output += makeCarResult("Toyota Corolla", "2018", "88000 RMB", "Silver", "73000 km");
+                }
+                else if (modelValue == "audi" || modelValue == "a4") {
+                    output = makeCarResult("Audi A4", "2020", "210000 RMB", "Blue", "41000 km");
                 }
                 else {
                     output = "No car found.";

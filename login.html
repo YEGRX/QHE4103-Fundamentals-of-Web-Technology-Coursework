@@ -225,13 +225,9 @@
                     return false;
                 }
 
-                if (passwordValue.indexOf("@") == -1) {
-                    messageText.innerHTML = "Password must contain @.";
-                    return false;
-                }
-
                 messageText.style.color = "green";
-                messageText.innerHTML = "Login form is valid.";
+                messageText.innerHTML = "Login success.";
+                window.location.href = "seller.html";
                 return false;
             }
         </script>

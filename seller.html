@@ -26,23 +26,54 @@
         }
 
         .nav a {
+            display: inline-block;
             margin-right: 10px;
-            color: blue;
+            margin-bottom: 5px;
+            padding: 10px 16px;
             color: #444444;
             text-decoration: none;
+            background-color: #ffffff;
+            border: 1px solid #cfcfc8;
+        }
+
+        .nav a:hover {
+            background-color: #a9a9a9;
+            color: #ffffff;
+        }
+
+        .active-link {
+            background-color: #a9a9a9;
+            color: #ffffff;
         }
 
         .form-box {
             background-color: #ffffff;
-            width: 320px;
-            padding: 15px;
+            width: 360px;
+            padding: 20px;
             margin: auto;
             border: 1px solid #d6d6d0;
         }
 
+        .form-box p {
+            color: #222222;
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+
         .form-box a {
-            color:  #444444;
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 10px 14px;
+            color: #444444;
             text-decoration: none;
+            font-weight: bold;
+            background-color: #ffffff;
+            border: 1px solid #cfcfc8;
+        }
+
+        .form-box a:hover {
+            background-color: #a9a9a9;
+            color: #444444;
         }
 
         @media only screen and (max-width: 768px) {
@@ -64,14 +95,13 @@
 
 <body>
 
-    <!-- seller page links -->
 
     <h1 class="title">Online Car Sale</h1>
     <p class="title">Seller Page</p>
 
     <div class="nav">
         <a href="homepage.html">Home</a>
-        <a href="seller.html">Seller</a>
+        <a href="seller.html" class="active-link">Seller</a>
         <a href="registration.html">Register</a>
         <a href="login.html">Login</a>
         <a href="add-car.html">Add Car</a>

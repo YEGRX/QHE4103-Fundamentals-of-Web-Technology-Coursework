@@ -210,21 +210,111 @@
 
         <div class="result-box">
             <h3>Search Result</h3>
-            <p id="result">No result yet.</p>
+            <div id="result">No result yet.</div>
         </div>
 
         <p class="note">This is the first draft of search page.</p>
 
         <script>
-            function makeCarResult(model, year, price, color, mileage) {
+            var carList = [
+                {
+                    brand: "Toyota",
+                    model: "Toyota Camry",
+                    year: "2020",
+                    price: "120000 RMB",
+                    color: "Black",
+                    mileage: "50000 km",
+                    transmission: "Automatic",
+                    fuel: "Petrol",
+                    condition: "Used",
+                    seller: "QMUL Car Dealer",
+                    contact: "07123 456789",
+                    description: "A clean used car for family daily use."
+                },
+                {
+                    brand: "Honda",
+                    model: "Honda Civic",
+                    year: "2019",
+                    price: "95000 RMB",
+                    color: "White",
+                    mileage: "62000 km",
+                    transmission: "Automatic",
+                    fuel: "Petrol",
+                    condition: "Used",
+                    seller: "QMUL Car Dealer",
+                    contact: "07123 456789",
+                    description: "A popular small car with good condition."
+                },
+                {
+                    brand: "BMW",
+                    model: "BMW X3",
+                    year: "2021",
+                    price: "280000 RMB",
+                    color: "Grey",
+                    mileage: "30000 km",
+                    transmission: "Automatic",
+                    fuel: "Petrol",
+                    condition: "Used",
+                    seller: "QMUL Car Dealer",
+                    contact: "07123 456789",
+                    description: "A clean SUV with low mileage."
+                },
+                {
+                    brand: "Audi",
+                    model: "Audi A4",
+                    year: "2020",
+                    price: "210000 RMB",
+                    color: "Blue",
+                    mileage: "41000 km",
+                    transmission: "Automatic",
+                    fuel: "Petrol",
+                    condition: "Used",
+                    seller: "QMUL Car Dealer",
+                    contact: "07123 456789",
+                    description: "A comfortable sedan for city and family use."
+                },
+                {
+                    brand: "Toyota",
+                    model: "Toyota Corolla",
+                    year: "2018",
+                    price: "88000 RMB",
+                    color: "Silver",
+                    mileage: "73000 km",
+                    transmission: "Automatic",
+                    fuel: "Petrol",
+                    condition: "Used",
+                    seller: "QMUL Car Dealer",
+                    contact: "07123 456789",
+                    description: "An economic car with stable performance."
+                }
+            ];
+
+            function makeDetailLink(car) {
+                var link = "car-detail.html?";
+                link += "brand=" + encodeURIComponent(car.brand);
+                link += "&model=" + encodeURIComponent(car.model);
+                link += "&year=" + encodeURIComponent(car.year);
+                link += "&price=" + encodeURIComponent(car.price);
+                link += "&color=" + encodeURIComponent(car.color);
+                link += "&mileage=" + encodeURIComponent(car.mileage);
+                link += "&transmission=" + encodeURIComponent(car.transmission);
+                link += "&fuel=" + encodeURIComponent(car.fuel);
+                link += "&condition=" + encodeURIComponent(car.condition);
+                link += "&seller=" + encodeURIComponent(car.seller);
+                link += "&contact=" + encodeURIComponent(car.contact);
+                link += "&description=" + encodeURIComponent(car.description);
+                return link;
+            }
+
+            function makeCarResult(car) {
                 var text = "";
                 text += "<div class='car-item'>";
-                text += "<p><b>Model:</b> " + model + "</p>";
-                text += "<p><b>Year:</b> " + year + "</p>";
-                text += "<p><b>Price:</b> " + price + "</p>";
-                text += "<p><b>Color:</b> " + color + "</p>";
-                text += "<p><b>Mileage:</b> " + mileage + "</p>";
-                text += "<p><a class='detail-link' href='car-detail.html'>View Detail</a></p>";
+                text += "<p><b>Model:</b> " + car.model + "</p>";
+                text += "<p><b>Year:</b> " + car.year + "</p>";
+                text += "<p><b>Price:</b> " + car.price + "</p>";
+                text += "<p><b>Color:</b> " + car.color + "</p>";
+                text += "<p><b>Mileage:</b> " + car.mileage + "</p>";
+                text += "<p><a class='detail-link' href='" + makeDetailLink(car) + "'>View Detail</a></p>";
                 text += "</div>";
                 return text;
             }
@@ -234,39 +324,39 @@
                 var yearValue = document.getElementById("year").value;
                 var resultText = document.getElementById("result");
                 var output = "";
+                var i = 0;
+                var modelMatch = false;
+                var yearMatch = false;
 
                 if (modelValue == "" && yearValue == "") {
                     resultText.innerHTML = "Please enter car model or car year.";
                     return false;
                 }
 
-                if ((modelValue == "camry" || modelValue == "toyota camry") && yearValue == "2020") {
-                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
+                for (i = 0; i < carList.length; i++) {
+                    modelMatch = false;
+                    yearMatch = false;
+
+                    if (modelValue == "") {
+                        modelMatch = true;
+                    }
+                    else if (carList[i].model.toLowerCase().indexOf(modelValue) != -1 || carList[i].brand.toLowerCase().indexOf(modelValue) != -1) {
+                        modelMatch = true;
+                    }
+
+                    if (yearValue == "") {
+                        yearMatch = true;
+                    }
+                    else if (carList[i].year == yearValue) {
+                        yearMatch = true;
+                    }
+
+                    if (modelMatch == true && yearMatch == true) {
+                        output += makeCarResult(carList[i]);
+                    }
                 }
-                else if ((modelValue == "civic" || modelValue == "honda civic") && yearValue == "2019") {
-                    output = makeCarResult("Honda Civic", "2019", "95000 RMB", "White", "62000 km");
-                }
-                else if (modelValue == "bmw" || yearValue == "2021") {
-                    output = makeCarResult("BMW X3", "2021", "280000 RMB", "Grey", "30000 km");
-                }
-                else if (modelValue == "camry" && yearValue == "") {
-                    output = makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
-                }
-                else if (modelValue == "" && yearValue == "2019") {
-                    output = makeCarResult("Honda Civic", "2019", "95000 RMB", "White", "62000 km");
-                }
-                else if (modelValue == "" && yearValue == "2020") {
-                    output += makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
-                    output += makeCarResult("Audi A4", "2020", "210000 RMB", "Blue", "41000 km");
-                }
-                else if (modelValue == "toyota" && yearValue == "") {
-                    output += makeCarResult("Toyota Camry", "2020", "120000 RMB", "Black", "50000 km");
-                    output += makeCarResult("Toyota Corolla", "2018", "88000 RMB", "Silver", "73000 km");
-                }
-                else if (modelValue == "audi" || modelValue == "a4") {
-                    output = makeCarResult("Audi A4", "2020", "210000 RMB", "Blue", "41000 km");
-                }
-                else {
+
+                if (output == "") {
                     output = "No car found.";
                 }
 

@@ -8,12 +8,10 @@
             font-family: Times New Roman;
             color: #222222;
             margin: 0;
-            padding: 10px;
         }
 
         p.logo {
-            position: relative;
-            left: 1%;
+            margin: 30px 0 10px 60px;
             font-size: 20px;
             font-weight: bold;
         }
@@ -25,23 +23,24 @@
 
         ul {
             list-style-type: none;
-            margin: 0;
+            margin: 0 0 20px 0;
             padding: 0;
-            overflow: hidden;
+            text-align: center;
         }
 
         li {
-            float: left;
+            display: inline-block;
             border: 1px solid #cfcfc8;
-            padding: 12px 25px;
             background-color: #ffffff;
             margin-right: 5px;
             margin-bottom: 5px;
         }
 
         li a {
+            display: block;
             text-decoration: none;
             color: #444444;
+            padding: 12px 25px;
         }
 
         li a:hover {
@@ -58,19 +57,30 @@
         }
 
         .main-box {
-            margin: 40px 5%;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
         }
 
         .main-box h1 {
             color: #222222;
+            font-size: 34px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .main-box p {
+            margin-bottom: 25px;
         }
 
         .form-box {
             background-color: #ffffff;
             border: 1px solid #d6d6d0;
-            padding: 20px;
-            width: 420px;
+            padding: 28px;
+            width: 460px;
             max-width: 100%;
+            margin: 0 auto;
+            text-align: left;
         }
 
         .text1 {
@@ -89,14 +99,28 @@
         }
 
         @media only screen and (max-width: 768px) {
+            p.logo {
+                margin: 20px 0 10px 20px;
+            }
+
             li {
-                float: none;
                 display: block;
-                width: 100%;
+                width: 88%;
+                margin: 0 auto 10px auto;
+            }
+
+            .main-box {
+                margin: 30px auto;
+                width: 88%;
+            }
+
+            .main-box h1 {
+                font-size: 28px;
             }
 
             .form-box {
                 width: 100%;
+                padding: 20px;
             }
 
             .text1 {
@@ -108,12 +132,12 @@
     <script type="text/javascript">
         function setYellow(x)
         {
-            document.getElementById(x).style.background = "#f3ead0";
+            document.getElementById(x).style.background = "#efeee8";
         }
 
         function setWhite(x)
         {
-            document.getElementById(x).style.background = "white";
+            document.getElementById(x).style.background = "#fafaf8";
         }
 
         function checkCar()
@@ -159,7 +183,8 @@
     <p class="logo"><a href="index.html">CAR SALE</a></p>
 
     <ul>
-        <li><a href="index.html">HOME</a ></li>
+        <li><a href="homepage.html">HOME</a ></li>
+        <li><a href="seller.html">SELLER</a></li>
         <li><a href="registration.html">REGISTER</a ></li>
         <li><a href="login.html">LOGIN</a ></li>
         <li class="current-page"><a href="add-car.html">ADD CAR</a ></li>

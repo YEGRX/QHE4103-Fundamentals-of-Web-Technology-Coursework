@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Car Detail Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                background-color: #f4f4f1;
+                font-family: Arial, sans-serif;
+                color: #222222;
+                margin: 0;
+            }
+
+            p.logo {
+                margin: 30px 0 10px 60px;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            p.logo a {
+                text-decoration: none;
+                color: #222222;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0 0 20px 40px;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            li {
+                float: left;
+                border: 1px solid #cfcfc8;
+                background-color: #ffffff;
+                margin-right: 14px;
+                min-width: 165px;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #444444;
+                padding: 18px 24px;
+                display: block;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            li a:hover {
+                background-color: #a9a9a9;
+                color: #ffffff;
+            }
+
+            .active-link {
+                background-color: #a9a9a9;
+                color: #ffffff;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 130px;
+                font-size: 34px;
+                font-weight: normal;
+            }
+
+            .detail-box {
+                width: 540px;
+                margin: 40px auto;
+                border: 1px solid #d6d6d0;
+                background-color: #ffffff;
+                padding: 28px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            }
+
+            .car-photo {
+                text-align: center;
+                margin-bottom: 22px;
+            }
+
+            .car-photo img {
+                width: 100%;
+                max-width: 420px;
+                border: 1px solid #d6d6d0;
+            }
+
+            .back-link {
+                text-decoration: none;
+                color: #2f3b45;
+                font-weight: bold;
+            }
+
+            @media screen and (max-width: 768px) {
+                p.logo {
+                    margin: 20px 0 10px 20px;
+                }
+
+                ul {
+                    margin: 0 20px 20px 20px;
+                }
+
+                li {
+                    float: none;
+                    min-width: auto;
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+
+                h1 {
+                    margin-top: 40px;
+                    font-size: 28px;
+                }
+
+                .detail-box {
+                    width: 88%;
+                    padding: 20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <p class="logo"><a href="car-detail.html">LOGO</a></p>
+
+        <ul>
+            <li><a href="homepage.html">HOME</a></li>
+            <li><a href="registration.html">REGISTER</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li><a href="seller.html">SELLER</a></li>
+            <li><a class="active-link" href="search.html">SEARCH</a></li>
+        </ul>
+
+        <h1>Car Detail</h1>
+
+        <div class="detail-box">
+            <div class="car-photo">
+                <img id="car-image" src="images/toyota-camry.jpg" alt="Car Photo">
+            </div>
+
+            <p><b>Brand:</b> <span id="brand">Toyota</span></p>
+            <p><b>Model:</b> <span id="model">Toyota Camry</span></p>
+            <p><b>Year:</b> <span id="year">2020</span></p>
+            <p><b>Price:</b> <span id="price">120000 RMB</span></p>
+            <p><b>Color:</b> <span id="color">Black</span></p>
+            <p><b>Mileage:</b> <span id="mileage">50000 km</span></p>
+            <p><b>Transmission:</b> <span id="transmission">Automatic</span></p>
+            <p><b>Fuel Type:</b> <span id="fuel">Petrol</span></p>
+            <p><b>Condition:</b> <span id="condition">Used</span></p>
+            <p><b>Seller:</b> <span id="seller">QMUL Car Dealer</span></p>
+            <p><b>Contact:</b> <span id="contact">07123 456789</span></p>
+            <p><b>Description:</b> <span id="description">A clean used car for family daily use.</span></p>
+            <p><a class="back-link" href="search.html">Back to Search</a></p>
+        </div>
+
+        <script>
+            function updateCarImage() {
+                var modelName = document.getElementById("model").innerHTML.toLowerCase();
+                var image = document.getElementById("car-image");
+
+                if (modelName.indexOf("camry") != -1) {
+                    image.src = "images/toyota-camry.jpg";
+                    image.alt = "Toyota Camry";
+                }
+                else if (modelName.indexOf("civic") != -1) {
+                    image.src = "images/honda-civic.jpg";
+                    image.alt = "Honda Civic";
+                }
+                else if (modelName.indexOf("bmw") != -1 || modelName.indexOf("x3") != -1) {
+                    image.src = "images/bmw-x3.jpg";
+                    image.alt = "BMW X3";
+                }
+                else if (modelName.indexOf("audi") != -1 || modelName.indexOf("a4") != -1) {
+                    image.src = "images/audi-a4.jpg";
+                    image.alt = "Audi A4";
+                }
+                else if (modelName.indexOf("corolla") != -1) {
+                    image.src = "images/toyota-corolla.jpg";
+                    image.alt = "Toyota Corolla";
+                }
+            }
+
+            function showCarDetail() {
+                var params = new URLSearchParams(window.location.search);
+
+                if (params.get("brand") != null) {
+                    document.getElementById("brand").innerHTML = params.get("brand");
+                }
+
+                if (params.get("model") != null) {
+                    document.getElementById("model").innerHTML = params.get("model");
+                }
+
+                if (params.get("year") != null) {
+                    document.getElementById("year").innerHTML = params.get("year");
+                }
+
+                if (params.get("price") != null) {
+                    document.getElementById("price").innerHTML = params.get("price");
+                }
+
+                if (params.get("color") != null) {
+                    document.getElementById("color").innerHTML = params.get("color");
+                }
+
+                if (params.get("mileage") != null) {
+                    document.getElementById("mileage").innerHTML = params.get("mileage");
+                }
+
+                if (params.get("transmission") != null) {
+                    document.getElementById("transmission").innerHTML = params.get("transmission");
+                }
+
+                if (params.get("fuel") != null) {
+                    document.getElementById("fuel").innerHTML = params.get("fuel");
+                }
+
+                if (params.get("condition") != null) {
+                    document.getElementById("condition").innerHTML = params.get("condition");
+                }
+
+                if (params.get("seller") != null) {
+                    document.getElementById("seller").innerHTML = params.get("seller");
+                }
+
+                if (params.get("contact") != null) {
+                    document.getElementById("contact").innerHTML = params.get("contact");
+                }
+
+                if (params.get("description") != null) {
+                    document.getElementById("description").innerHTML = params.get("description");
+                }
+
+                updateCarImage();
+            }
+
+            showCarDetail();
+        </script>
+    </body>
+</html>

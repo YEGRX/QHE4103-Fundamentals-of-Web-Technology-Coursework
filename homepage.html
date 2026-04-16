@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online Car Sale - Homepage</title>
+        <style>
+            body {
+                background-color: #f4f1f1;
+                font-family: Arial, sans-serif;
+                color: #222222;
+                margin: 0;
+            }
+            .page-wrapper {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            p.logo {
+                margin: 0;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 2px;
+                padding: 30px 20px 10px 20px;
+            }
+            p.logo a {
+                text-decoration: none;
+                color: #222222;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0 20px 20px 20px;
+                overflow: hidden;
+            }
+            li {
+                float: left;
+                border: 1px solid #cfcfc8;
+                background-color: #ffffff;
+                margin-right: 14px;
+                min-width: 105px;
+            }
+            li a {
+                display: block;
+                text-decoration: none;
+                color: #444444;
+                padding: 18px 24px;
+                text-align: center;
+                font-size: 16px;
+            }
+            li a:hover {
+                background-color: #a9a9a9;
+                color: white;
+            }
+            .active-link {
+                background-color: #a9a9a9;
+                color: white;
+            }
+            .hero-box {
+                margin: 20px;
+                padding: 25px;
+                background-color: #ffffff;
+                border: 1px solid #d6d6d0;
+                text-align: center;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            }
+            .hero-box h1 {
+                margin-top: 0;
+                font-size: 34px;
+                font-weight: normal;
+            }
+            .intro-box {
+                margin: 20px;
+                padding: 15px;
+                background-color: #ffffff;
+                border: 1px solid #d6d6d0;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            }
+            .section-title {
+                margin-top: 0;
+            }
+            .link-box {
+                margin: 20px;
+                padding: 15px;
+                background-color: #ffffff;
+                border: 1px solid #d6d6d0;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            }
+            .link-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .link-card {
+                padding: 18px;
+                border: 1px solid #d6d6d0;
+                background-color: #fafaf8;
+                min-height: 180px;
+            }
+            .link-card h3 {
+                margin-top: 0;
+                font-size: 16px;
+            }
+            .link-card p {
+                line-height: 1.5;
+            }
+            .link-card a {
+                text-decoration: none;
+            }
+            .link-button {
+                display: inline-block;
+                margin-top: 8px;
+                padding: 8px 14px;
+                border: 1px solid #2f3b45;
+                background-color: #2f3b45;
+                color: white;
+            }
+            .link-button:hover {
+                background-color: #a9a9a9;
+                border: 1px solid #a9a9a9;
+                color: white;
+            }
+            .footer {
+                margin: 20px;
+                padding: 15px;
+                background-color: #ffffff;
+                border: 1px solid #d6d6d0;
+                text-align: center;
+                font-size: 12pt;
+                color: #666666;
+            }
+            @media screen and (max-width: 768px) {
+                p.logo {
+                    text-align: center;
+                }
+                li {
+                    float: none;
+                    margin-bottom: 10px;
+                    margin-right: 0;
+                }
+                .link-grid {
+                    grid-template-columns: 1fr;
+                }
+                .link-card {
+                    min-height: auto;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="page-wrapper">
+            <p class="logo"><a href="homepage.html">LOGO</a></p>
+            <ul>
+                <li><a class="active-link" href="homepage.html">HOME</a></li>
+                <li><a href="seller.html">SELLER</a></li>
+                <li><a href="registration.html">REGISTRATION</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="add-car.html">ADD CAR</a></li>
+                <li><a href="search.html">SEARCH</a></li>
+            </ul>
+
+            <div class="hero-box">
+                <h1>Welcome to Online Car Sale</h1>
+                <p>This website is developed for users to browse car information, register as seller and search for available cars online.</p>
+            </div>
+
+            <div class="intro-box">
+                <h2 class="section-title">Business Introduction</h2>
+                <p>Our platform is designed to connect car buyers and sellers in one place. Users can search cars by model and year, view more details and access different pages through the navigation bar.</p>
+            </div>
+
+            <div class="link-box">
+                <h2 class="section-title">Quick Links</h2>
+                <div class="link-grid">
+                    <div class="link-card">
+                        <h3>Seller Registration</h3>
+                        <p>Create a seller account for the website.</p>
+                        <p><a class="link-button" href="registration.html">Open page</a></p>
+                    </div>
+                    <div class="link-card">
+                        <h3>Seller Login</h3>
+                        <p>Login to manage seller information later.</p>
+                        <p><a class="link-button" href="login.html">Open page</a></p>
+                    </div>
+                    <div class="link-card">
+                        <h3>Add Car</h3>
+                        <p>Add new car details for sale in the system.</p>
+                        <p><a class="link-button" href="add-car.html">Open page</a></p>
+                    </div>
+                    <div class="link-card">
+                        <h3>Search Cars</h3>
+                        <p>Browse car information through the search page.</p>
+                        <p><a class="link-button" href="search.html">Open page</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Online Car Sale Website</p>
+                <p>QHE4103 Fundamentals of Web Technology</p>
+            </div>
+        </div>
+    </body>
+</html>
